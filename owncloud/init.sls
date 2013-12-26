@@ -1,3 +1,4 @@
+{% if grains['osfullname'] == 'Ubuntu' and grains['osrelease'].startswith('12.04') %}
 include:
   - owncloud.mysql
 
@@ -26,3 +27,4 @@ owncloud-repo:
 
 owncloud:
   pkg.installed
+{% endif %}

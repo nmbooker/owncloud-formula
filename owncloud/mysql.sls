@@ -1,3 +1,4 @@
+{% if grains['os_family'] == 'Debian' %}
 include:
   - owncloud.python-mysqldb
 
@@ -43,4 +44,4 @@ ownclouddb:
       - mysql_database: owncloud
       - pkg: python-mysqldb
       - service: mysql
-
+{% endif %}
